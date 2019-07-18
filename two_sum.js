@@ -24,7 +24,7 @@ var twoSum = function(nums, target) {
     }
 };
 
-/** Version 2
+/** Version 2, use map to reduce time complexity
  * @param {number[]} nums
  * @param {number} target
  * @return {number[]}
@@ -39,5 +39,21 @@ var twoSum = function(nums, target) {
         if (map.hasOwnProperty(complement) && map[complement] !== i) {
             return [i, map[complement]];
         }
+    }
+};
+
+/** Version 3, one-pass loop
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let map = {}, complement;
+    for (let i = 0; i < nums.length; i++) {
+        complement = target - nums[i];
+        if (map.hasOwnProperty(complement)) {
+            return [i, map[complement]];
+        }
+        map[nums[i]] = i;
     }
 };
