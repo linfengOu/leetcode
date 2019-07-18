@@ -8,11 +8,13 @@ Because nums\[0\] + nums\[1\] = 2 + 7 = 9,
 return \[0, 1\].  
 
 ```javascript
-/** Version 1
+/**
  * @param {number[]} nums
  * @param {number} target
  * @return {number[]}
  */
+
+// Version 1
 var twoSum = function(nums, target) {
     for (let i = 0; i < nums.length; i++) {
         for (let j = i + 1; j < nums.length; j++) {
@@ -23,11 +25,7 @@ var twoSum = function(nums, target) {
     }
 };
 
-/** Version 2, use map to reduce time complexity
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
-*/
+// Version 2, use map to reduce time complexity
 var twoSum = function(nums, target) {
     let map = {}, complement;
     for (let i = 0; i < nums.length; i++) {
@@ -41,11 +39,7 @@ var twoSum = function(nums, target) {
     }
 };
 
-/** Version 3, one-pass loop
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
+// Version 3, one-pass loop
 var twoSum = function(nums, target) {
     let map = {}, complement;
     for (let i = 0; i < nums.length; i++) {
